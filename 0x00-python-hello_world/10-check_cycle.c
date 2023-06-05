@@ -14,7 +14,7 @@ int check_cycle(listint_t *list)
 
 	while (fastPtr && fastPtr->next && slowPtr)
 	{
-		if (slow == fast)
+		if (slowPtr == fastPtr)
 			return (1);
 		fastPtr = fastPtr->next->next;
 		slowPtr = slowPtr->next;
