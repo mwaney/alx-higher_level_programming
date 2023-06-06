@@ -3,6 +3,6 @@ for i in range(0, 10):
     for j in range(i + 1, 10):
         comb = f"{i}{j}"
         if i == 8 and j == 9:
-            print(comb)
+            print("{}".format(comb))
         else:
-            print(comb, end = ", ")
+            print("{}".format(comb), end=", ")
