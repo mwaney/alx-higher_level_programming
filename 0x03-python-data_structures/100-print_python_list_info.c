@@ -10,12 +10,12 @@ void print_python_list_info(PyObject *p)
 	PyObject *info;
 	int len, i, mem;
 
-	len = Py_size(p);
+	len = Py_SIZE(p);
 	mem = ((PyListObject *)p)->allocated;
 	printf("[*] Size of Python List = %d\n", len);
 	printf("[*] Alocated = %d\n", mem);
 
-	for (i = 0; i < size; i++)
+	for (i = 0; i < len; i++)
 	{
 		printf("Element %d: ", i);
 		info = PyList_GetItem(p, i);
