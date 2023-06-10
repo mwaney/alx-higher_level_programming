@@ -7,7 +7,7 @@
 
 void print_python_list_info(PyObject *p)
 {
-	PyObject *info;
+	PyObject *obj;
 	int len, i, mem;
 
 	len = Py_SIZE(p);
@@ -18,7 +18,7 @@ void print_python_list_info(PyObject *p)
 	for (i = 0; i < len; i++)
 	{
 		printf("Element %d: ", i);
-		info = PyList_GetItem(p, i);
-		printf("%s\n", Py_TYPE(info)->tp_name);
+		obj = PyList_GetItem(p, i);
+		printf("%s\n", Py_TYPE(obj)->tp_name);
 	}
 }
