@@ -24,6 +24,6 @@ class Square:
         area is a public instance method
 
         Returns:
-            int: size multiplied by size
+            int: the area of a square
         """
-        return self.__size * self.__size
+        return self.__size ** 2
