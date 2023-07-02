@@ -1,0 +1,57 @@
+Import text_indentation method:
+===============================
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+TESTS THAT WILL PASS:
+=====================
+
+Test case string with extra spaces:
+------------------------------------
+     >>> text_indentation("   Abs B.     C D?      E F:     G H     ")
+     Abs B.
+     <BLANKLINE>
+     C D?
+     <BLANKLINE>
+     E F:
+     <BLANKLINE>
+     G H
+
+     >>> text_indentation("   Govinda     \n     .     ")
+     Govinda
+     .
+     <BLANKLINE>
+
+     >>> text_indentation("      Octopus      ")
+     Octopus
+
+     >>> text_indentation("    ")
+
+A test case with text and a character for 2 new lines:
+-------------------------------------------------------------
+    >>> text_indentation('Holberton School?')
+    Holberton School?
+    <BLANKLINE>
+
+CASES THAT FAIL:
+================
+
+A test case without parameters:
+-------------------------------
+    >>> text_indentation()
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+ A test case with other data types as parameter
+
+    >>> text_indentation(15)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(str)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(False)
+    Traceback (most recent call last):
+    TypeError: text must be a string

@@ -1,0 +1,50 @@
+import lazy_matrix_mul method
+==========================
+>>> lazy_matrix_mul = __import__("101-lazy_matrix_mul").lazy_matrix_mul
+
+TESTS THAT WILL PASS:
+=====================
+Test cases of positive  and negative ints and floats:
+-----------------------------------------------------
+>>> m_a = [[3, 2], [6, 4]]
+>>> m_b = [[2, 1], [1, 9]]
+>>> print(lazy_matrix_mul(m_a, m_b))
+[[ 8 21]
+[16 42]]
+
+
+>>> m_a = [[-5.0, -3.0]]
+>>> m_b = [[-2.0], [-8.0]]
+>>> print(lazy_matrix_mul(m_a, m_b))
+[[34.]]
+
+TESTS THAT WILL FAIL
+=====================
+Test case with one argument:
+----------------------------
+>>> print(lazy_matrix_mul(m_a))
+Traceback (most recent call last):
+...
+TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+Test case with no arguments:
+-----------------------------
+>>> print(lazy_matrix_mul()) # doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+...
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 
+'m_a' and 'm_b'
+
+Test case too many arguments:
+---------------------------------------
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8]], [[9, 10], [11, 12]])
+Traceback (most recent call last):
+...
+TypeError: lazy_matrix_mul() takes 2 positional arguments but 3 were given
+
+Test case for mismatching matrices:
+-----------------------------------
+>>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2], [3, 4,]])
+Traceback (most recent call last):
+...
+ValueError: shapes (2,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)

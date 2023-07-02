@@ -1,0 +1,85 @@
+Import add matrix_mul method
+============================
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+TESTS THAT WILL PASS:
+=====================
+
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+[[7, 10], [15, 22]]
+
+>>> matrix_mul([[1, 2]], [[7, 4], [5, 2]])
+[[17, 8]]
+
+>>> m_a = [[-2.0, -3.0]]
+>>> m_b = [[-2.0], [-4.0]]
+>>> print(matrix_mul(m_a, m_b))
+[[16.0]]
+	
+
+TESTS THAT WILL FAIL:
+=====================
+Test Case with empty list in matrix:
+-------------------------------------
+>>> m_a = []
+>>> m_b = [[1, 6], [0, 5]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+ValueError: m_a can't be empty
+
+Test matrix with other data types:
+-----------------------------------
+>>> m_a = (1, 2)
+>>> m_b = [[2, 2], [7, 1]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list
+
+Test Case with different size lists:
+------------------------------------
+>>> m_a = [[1, 2], [1, 2]]
+>>> m_b = [[1, 2], [1, 2, 3, 4]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+TypeError: each row of m_b must should be of the same size
+
+Test case where m_a is not a list:
+----------------------------------
+>>> matrix_mul(9, [[1, 2], [3, 4]])
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list
+
+Test case where m_a is not a list:
+----------------------------------
+>>> matrix_mul([[1, 2], [3, 4]], 8)
+Traceback (most recent call last):
+...
+TypeError: m_b must be a list
+
+Test case for empty lists:
+--------------------------
+>>> matrix_mul([[]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+...
+ValueError: m_a can't be empty
+
+>>> matrix_mul([[1, 2], [3, 4]], [])
+Traceback (most recent call last):
+...
+ValueError: m_b can't be empty
+
+>>> matrix_mul([[1, 2], [3, 4]], [[]])
+Traceback (most recent call last):
+...
+ValueError: m_b can't be empty
+
+Test case for Empty argument:
+-----------------------------
+>>> matrix_mul()
+Traceback (most recent call last):
+...
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
